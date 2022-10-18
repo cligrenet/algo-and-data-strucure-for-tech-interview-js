@@ -1,5 +1,8 @@
-// Binary Heaps
+// Binary Heaps:
+// A type of a heap, which is a type of a tree
+// MaxBinaryHeap and MinBinaryHeap
 
+// ----------------------
 // MaxBinaryHeap:
 // - Parent nodes are always larger > child nodes
 // - But no implied ordering between sibling nodes
@@ -13,8 +16,21 @@
 // 2   7
 
 // MinBinaryHeap, parend nodes are always smaller < child nodes
+
 // ie:
 //            1
 //       2          3
 //   17    19     36   7
 // 25 100
+
+// ----------------------
+// Priority Queue
+// Kind of a MinBinaryHeap
+
+// ----------------------
+// Complexity of Binary Heaps:
+// Insertion - 🤟 O(log n) -> compare one time per level
+// Removal - 🤟 O(log n)
+// Search - O(n) -> not really be made for searching
+
+// NOTE Log n === log base 2 of n
