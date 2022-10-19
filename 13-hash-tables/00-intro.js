@@ -7,9 +7,12 @@
 
 // Collision in a hash table
 
-// Solutions:
-// - Seperate chaining
-// - Linear probing
+// Solutions (there are many more):
+// 1- Seperate chaining
+// 2- Linear probing
 
 // Complexity
-// constant time
+// constant time (Average case) -> fast, evenly distributed, deterministic // worst case: linear time O(n)
+// - Insertion: O(1)
+// - Deletion: O(1)
+// - Access: O(1)
