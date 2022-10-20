@@ -44,3 +44,22 @@ Storage          O(V+E)
         F: ["E", "A"]
     }             
 */
+
+// undirected graph
+class Graph {
+	constructor() {
+		this.adjacencyList = {};
+	}
+	addVertex(vertexName) {
+		if (!this.adjacencyList[vertexName]) this.adjacencyList[vertexName] = [];
+	}
+	addEdge() {}
+	removeEdge() {}
+	removeVertex() {}
+}
+
+let g = new Graph();
+g.addVertex('Tokyo');
+g.addVertex('San Francisco');
+g.addVertex('Hong Kong');
+console.log(g.adjacencyList);
