@@ -57,7 +57,15 @@ class Graph {
 		if (this.adjacencyList[vertex1]) this.adjacencyList[vertex1].push(vertex2);
 		if (this.adjacencyList[vertex2]) this.adjacencyList[vertex2].push(vertex1);
 	}
-	removeEdge() {}
+	removeEdge(vertex1, vertex2) {
+		// if (this.adjacencyList[vertex1]) this.adjacencyList[vertex1].splice(vertex2, 1);
+		// if (this.adjacencyList[vertex2]) this.adjacencyList[vertex2].splice(vertex1, 1);
+
+		if (this.adjacencyList[vertex1])
+			this.adjacencyList[vertex1] = this.adjacencyList[vertex1].filter((v) => v !== vertex2);
+		if (this.adjacencyList[vertex2])
+			this.adjacencyList[vertex2] = this.adjacencyList[vertex2].filter((v) => v !== vertex1);
+	}
 	removeVertex() {}
 }
 
@@ -67,4 +75,8 @@ g.addVertex('San Francisco');
 g.addVertex('Paris');
 // console.log(g.adjacencyList);
 g.addEdge('Tokyo', 'Paris');
+console.log(g.adjacencyList);
+g.removeEdge('SF', 'Par');
+console.log(g.adjacencyList);
+g.removeEdge('Tokyo', 'Paris');
 console.log(g.adjacencyList);
