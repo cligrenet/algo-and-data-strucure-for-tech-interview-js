@@ -1,4 +1,4 @@
-// V1 naive version
+// V1 naive version --> V2 binary heap priority queue
 class PriorityQueue {
 	constructor() {
 		this.values = [];
