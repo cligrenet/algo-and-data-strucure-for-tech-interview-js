@@ -12,8 +12,22 @@
    fib(3️⃣) + fib(2)   fib(2) + fib(1)
     /   \
 fib(2) + fib(1)
- 
 */
+
+// Complexity: O(2^N) ...quite bad
+// O(n!) > O(2^n) > O(n^2) > O(n log(n)) > O(n) > O(log(n)) > O(1)
+function fib(n) {
+	if (n <= 2) return 1;
+	return fib(n - 1) + fib(n - 2);
+}
+
+console.log(fib(1));
+console.log(fib(2));
+console.log(fib(3));
+console.log(fib(4));
+console.log(fib(5));
+console.log(fib(6));
+console.log(fib(7));
 
 // Optimal structure:
 // - Shortest path
