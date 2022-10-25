@@ -14,11 +14,30 @@
 fib(2) + fib(1)
 */
 
+// Recursive solution:
 // Complexity: O(2^N) ...quite bad
 // O(n!) > O(2^n) > O(n^2) > O(n log(n)) > O(n) > O(log(n)) > O(1)
 function fib(n) {
 	if (n <= 2) return 1;
 	return fib(n - 1) + fib(n - 2);
+}
+
+// Optimised solution: --> Memoization
+// Complexity: O(N)
+function fib(n, memo = []) {
+	if (memo[n] !== undefined) return memo[n];
+	if (n <= 2) return 1;
+	let res = fib(n - 1, memo) + fib(n - 2, memo);
+	memo[n] = res;
+	return res;
+}
+
+// Further refactored solution ?
+function fib(n, memo = [undefined, 1, 1]) {
+	if (memo[n] !== undefined) return memo[n];
+	let res = fib(n - 1, memo) + fib(n - 2, memo);
+	memo[n] = res;
+	return res;
 }
 
 console.log(fib(1));
