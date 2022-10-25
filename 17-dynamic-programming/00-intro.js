@@ -15,15 +15,15 @@ fib(2) + fib(1)
 */
 
 // Recursive solution:
-// Complexity: O(2^N) ...quite bad
+// Time complexity: O(2^N) ...quite bad
 // O(n!) > O(2^n) > O(n^2) > O(n log(n)) > O(n) > O(log(n)) > O(1)
 function fib(n) {
 	if (n <= 2) return 1;
 	return fib(n - 1) + fib(n - 2);
 }
 
-// Optimised solution: --> Memoization
-// Complexity: O(N)
+// Optimised solution: --> Memoization (top down)
+// Time complexity: O(N)
 function fib(n, memo = []) {
 	if (memo[n] !== undefined) return memo[n];
 	if (n <= 2) return 1;
@@ -38,6 +38,21 @@ function fib(n, memo = [undefined, 1, 1]) {
 	let res = fib(n - 1, memo) + fib(n - 2, memo);
 	memo[n] = res;
 	return res;
+}
+
+// ---------------------------------------------
+// Another approach --->  Tabulation (bottom-up):
+// Storing the result of a previous result in a 'table' (usually an array)
+// Usually down using iteration
+// Better SPACE complexity can be achieved using tabulation
+// Time complexity: O(N)
+function fib(n) {
+	if (n <= 2) return 1;
+	let fibNums = [0, 1, 1];
+	for (let i = 3; i <= n; i++) {
+		fibNums[i] = fibNums[i - 1] + fibNums[i - 2];
+	}
+	return fibNums[n];
 }
 
 console.log(fib(1));
